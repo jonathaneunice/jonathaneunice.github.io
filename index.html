@@ -13,9 +13,25 @@
     <!-- other styles and fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <style>
-      h1 { font-family: Lato, sans-serif; }
+      body {
+        font-family: Lato, sans-serif;
+      }
+      h1 {
+        font-weight: 700;
+      }
+      p.badges {
+        max-width: 5.5in;
+        margin-bottom: 0.4in;
+      }
+      blockquote {
+        font-size: 150%;
+      }
+      .jumbotron {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
       table { font-size: 140%; }
-      td { padding: 5px;
+      td { padding: 10px 8px;
         max-width: 5.75in;
       }
     </style>
@@ -25,28 +41,48 @@
         <div class="jumbotron">
             <h1>Jonathan Eunice</h1>
 
-            <p>Analyst ● Anthropologist ● Architect ● Developer ●<br>Operator ● Mentor ● Polymath ● Speaker ● Smokejumper</p>
+            <p class="badges">Analyst&nbsp;● Anthropologist&nbsp;● 
+              Architect&nbsp;● Developer&nbsp;● Operator&nbsp;●
+              Mentor&nbsp;● 
+              <!-- Polymath&nbsp;● -->
+              Speaker&nbsp;● Smokejumper</p>
+
+            <p>Formal résumé / CV is <a href="jse-cv.pdf">right here</a></p>
+        </div>
+    </div>
+  <div class="container">
+        <div class="jumbotron">
+            <h2>Every Superhero Needs an Origin Story</h2>
+
+            <p>I have one too.</p>
 
             <p>I've been in IT for a while.
             Thought I was going
             to be an academic computer scientist. Surprise!</p>
+            <blockquote>
+            &ldquo;Life is what happens to you while you are busy making other plans.&rdquo;
+            </blockquote>
 
             <p>
               <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#one">Wall Street</button>
             </p>
-            <p id="one" class="collapse">
+            <div id="one" class="collapse">
+              <p>
             Got yanked out of the academic
             career path
             into "Wall Street" to apply computing expertise and
             analytic skills to evaluating "hot" emerging technologies, companies, trends,
-            and business opportunities.
-            Made investors money and moved markets in that
-            capacity. Participated in IPOs and witnessed the birth of the first real "quant"
-            investing.
+            and business opportunities.</p>
+            <p>
+            Made investors money and moved markets. Participated in IPOs and
+            witnessed the birth of the first real "quant"
+            investing.</p>
+            <p>
             Most of all, learned the things that really
             drive human and organizational change.
             Not "better mousetraps," but better opportunities.
             </p>
+            </div>
 
             <p>
                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#two">The Network Age</button>
@@ -54,18 +90,31 @@
             <div id="two" class="collapse">
             <p>
 
-            Within a few years, Wall Street had evolved. My firm shifted from financial to
+            Within a few years, my firm shifted from financial to
             industrial clients to capture the "client/server" wave&mdash;the epic
-            rise of networked PCs, Unix workstations and servers, Windows,
+            rise of
+            networked PCs, Unix workstations and servers, Windows,
             distributed
-            computing, RISC CPUs, clustered HPC, "open standards," COTS, data warehousing and VLDB.
+            computing, RISC CPUs, clustered HPTC, "open standards," COTS,
+            data warehousing and VLDB.
             I tracked right into the second
-            wave with the internet, open source, and e-business, third wave with scale-out computing, Java, grid,
-            SOA, web services, and fourth wave with everything web, agile, virtualization,
+            wave with the internet, Java, the world-wide web, e-business, and birth of open source.
+            Then the third wave with scale-out computing, Big Iron Unix, grid, SOA,
+            web services, and start of programmable, reconfigurable infrastructure
+            as software.
+            Then the fourth wave with everything web, agile, virtualization,
             dynamic languages, modular servers,
-            a datacenter and power/energy revolution, cloud,
-            rich internet apps, IoT, DevOps, and the
-            end of IT as a box business. Even so, I've left out the half of it.
+            a data center and power/energy revolution, cloud, deep computing, "big data"
+            and analytics,
+            rich internet apps, widespread data integration, and the
+            end of IT as a box business. I've eagerly tracked right into
+            the fifth wave, with mobile ascendent, everything-as-a-service,
+            agile DevOps as law,
+            the normalization of continuously integrated and delivered apps
+            and network businesses,
+            pervasive broadband, the rise of JavaScript and node.js,
+            and the breakout of data science and machine learning.
+            Even so, I've left out the half of it.
             </p>
             <p>
 
@@ -94,22 +143,22 @@
               <p>
 
             Phenomenal as my advisory career was, I still
-            wanted to be *more* involved.
+            wanted to be <i>*more*</i> involved.
             Being an analyst and consultant brings you into
             exciting projects, efforts, and situations&mdash;often
-            at the highest levels and/or in their pivotal moments. But however
+            at the highest levels, and in their pivotal moments. But however
             key your insights and guidance, however much you
             get to structure the plan, choose the tools,
             or figure out how to rescue
             a bad situation,
-            there's limited "skin in the game."
+            there's limited opportunity for "skin in the game."
             Engagements are transitory. You help a team choose or
             correct
             its path, but they're the ones that get to "run the
             play."
               </p>
               <p>
-                By 2010, I had "done it all." I could  continue acing that course
+                By 2010, I had "done it all." I could continue acing that course
             for another thirty-something years, but as an analyst and consultant,
             there's nothing
             left to prove. No more mountains to climb. What's the
@@ -122,15 +171,15 @@
             </p>
             <p id="four" class="collapse">
             In 2011, I fundamentally refocused on building apps and operating services.
-            Had actually never stopped building,
+            Had actually never stopped building things,
             having worked on significant internal IT projects
             and open source
             contributions all along. But
             hands-on became my primary responsibility.
             Python, JavaScript, repos, cloud instances,
             and DevOps
-            became my closest workaday companions. Stack Overflow
-            and code deep-dives became my constant reading materials.
+            became my workaday companions. Stack Overflow
+            and code deep-dives became my constant reading.
             Still work with SVPs and CTOs, but my clients have greatly
             diversified into everyday developers, operators, app owners,
             domain specialists,
@@ -142,8 +191,17 @@
     </div>
     <div class="container">
         <div class="jumbotron">
-          <p>A few sample links...</p>
+            <h2>Places I Can Be Found</h2>
             <table>
+              <tr>
+                  <td><a href="mailto:jonathan.eunice@gmail.com">Email</a></td>
+                  <td>I <a href="https://twitter.com/jeunice/status/926576638871195648">hate email</a>,
+                  but you gotta have one, right?</td>
+              </tr>
+              <tr>
+                  <td><a href="https://twitter.com/jeunice">Twitter</a></td>
+                  <td>Holding forth on IT, development, DevOps, and techie life.</td>
+              </tr>
               <tr>
                   <td><a href="https://github.com/jonathaneunice">GitHub</a></td>
                   <td>~100 Git repositories owned or actively contributed to</td>
@@ -151,6 +209,10 @@
               <tr>
                   <td><a href="https://bitbucket.org/jeunice">Bitbucket</a></td>
                   <td>Dozens of Mercurial repositories (and a few Git)</td>
+              </tr>
+              <tr>
+                  <td><a href="https://www.linkedin.com/in/jonathaneunice/">LinkedIn</a></td>
+                  <td>Connections made.</td>
               </tr>
               <tr>
                   <td><a href="https://travis-ci.org/jonathaneunice">Travis CI</a></td>
@@ -164,6 +226,14 @@
                   <td><a href="http://softwareengineering.stackexchange.com/users/55314/jonathan-eunice">Software Engineering</a></td>
                   <td>7.5K points; active and broad contributor<br>(top 2% this year)</td>
               </tr>
+            </table>
+      </div>
+   </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Favored Tools</h2>
+            <table>
               <tr>
                   <td>Python</td>
 
@@ -174,6 +244,9 @@
                   <br>Expert in language, including web, DBMS, middleware, introspection,
                   meta-programming,
                   collections, text processing, and data science toolkits.
+                  <br>
+                  Great fan of Flask, Pandas, Jupyter Notebook (and Lab),
+                  lxml, and so many other modules.
                   </td>
               </tr>
               <tr>
@@ -184,9 +257,26 @@
                   node.js and other supporting skills.
                   </td>
               </tr>
+                <tr>
+                  <td>data</td>
+
+                  <td>IT <u>is</u> Data Processing.
+                  Strong in almost all aspects of how it's stored, moved, accessed, structured,
+                  secured, and processed. Includes relational databases (e.g. PostgreSQL, MySQL, SQLite) and
+                  non-relational/NoSQL databases (e.g, MongoDB),
+                  key-value stores (e.g. REDIS, DynamoDB), object databases,
+                  and their many hybrids and distributed variants.
+                  <br><br>
+                  Whether it's data in memory, in flight,
+                  at rest, slumbering in archival storage,
+                  serialized or marshaled, tightly schema'd or entirely
+                  unstructured...I got it.
+                  </td>
+              </tr>
             </table>
       </div>
    </div>
+
 
 
     <!-- JS libraries -->
