@@ -22,8 +22,21 @@
             max-width: 5.5in;
             margin-bottom: 0.4in;
         }
-        blockquote {
+        p.instructions {
+            color: gray;
+        }
+        blockquote, ul {
             font-size: 150%;
+        }
+        .circlenum {
+            font-size: 110%;
+            font-weight: 900;
+            margin-left: 0.4em;
+            margin-right: 0.4em;
+            vertical-align: -2px;
+        }
+        .jumbotron ul p {
+            margin-bottom: 3px;
         }
         button {
             margin-top: 12px;
@@ -54,7 +67,58 @@
             <p class="badges">Analyst&nbsp;● Anthropologist&nbsp;●&nbsp; Architect&nbsp;● Developer&nbsp;● Operator&nbsp;● Mentor&nbsp;●&nbsp; <!-- Polymath&nbsp;● -->
              Speaker&nbsp;●&nbsp;Smokejumper</p>
 
+
+
             <p>Formal résumé / CV is <a href="jse-cv.pdf">right here</a></p>
+        </div>
+
+        <div class="jumbotron">
+            <h1>Seeking Next Opportunity</h1>
+            <p>I've enjoyed the independent, on-call gig. It&rsquo;s let me jump into
+                many interesting situations, often at the most exiting point: their time of
+                greatest chaos and need. But engagements are transient in the
+                same way as my analyst and consulting career.
+                I&rsquo;m now looking for a longer-term opportunity
+                where I can consistently grow, improve, and advance
+                one team.
+            </p>
+
+            <h2>About Me</h2>
+            <ul>
+                <li><p>Full-stack developer; superior in Python, JavaScript,
+                    and other stacks</p></li>
+                <li><p>Complete DevOps from project architecture to
+                    production deployment at scale and speed</p></li>
+                <li><p>Strong hands-on skills, e.g. with web apps, data integration, data science,
+                    visualization, and cloud deployments</p></li>
+                <li><p>Fast learner and avid adopter of new technologies and approaches</p></li>
+                <li><p>Outstanding debugger, trouble-shooter, and "OMG! Everything is
+                    on fire! HALP!!" responder</p></li>
+                <li><p>Love complex integration and automation challenges</p></li>
+                <li><p>Love mentoring and accelerating the path of others</li>
+                <li><p>Deeply understand human factors, from UI/UX to broad cultural
+                    and organizational dynamics</p></li>
+                <li><p>Savvy to business strategies
+                    and aspirations</p></li>
+                <li><p>Good with customers and stakeholders</p></li>
+            </ul>
+
+            <h2>The Ideal Job</h2>
+            <ul>
+                <li><p>Accommodates living and working primarily in
+                    Greater Boston, MA / Southern NH (low&ndash;moderate travel okay)</p></li>
+                <li><p>Uses open, flexible, high-leverage tools for best quality and velocity
+                    (e.g. Python, JavaScript,
+                    open to using XaaS, virtualized or cloud deployments)</p></li>
+                <li><p>Organization devoted to learning and continually improving its game</p></li>
+                <li><p>Allows regular hands-on contributions as developer,
+                    architect, or service operator</p></li>
+                <li><p>Organization improves &ldquo;how things are done&rdquo; (or how well)</p></li>
+                <li><p>Can mentor others and accelerate their progress</p></li>
+                <li><p>Leverages my skills to systematically accelerate organization's
+                    best outcomes</p></li>
+            </ul>
+
         </div>
 
         <div class="container">
@@ -69,6 +133,8 @@
                     “Life is what happens to you while you are busy making other plans.”
                 </blockquote>
 
+                <p class="instructions">(click buttons to reveal chapters)</p>
+
                 <p><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#one">Wall Street</button></p>
 
                 <div id="one" class="collapse">
@@ -82,23 +148,84 @@
                 <p><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#two">The Network Age</button></p>
 
                 <div id="two" class="collapse">
-                    <p>Within a few years, my firm shifted from financial to industrial clients to capture the “client/server” wave—the epic rise of networked PCs, Unix workstations and servers, Windows, distributed computing, RISC CPUs, clustered HPTC, “open standards,” COTS, data warehousing and VLDB. I tracked right into the second wave with the internet, Java, the world-wide web, e-business, and birth of open source. Then the third wave with scale-out computing, Big Iron Unix, grid, SOA, web services, and start of programmable, reconfigurable infrastructure as software. Then the fourth wave with everything web, agile, virtualization, dynamic languages, modular servers, a data center and power/energy revolution, cloud, deep computing, “big data” and analytics, rich internet apps, widespread data integration, and the end of IT as a box business. I've eagerly tracked right into the fifth wave, with mobile ascendent, everything-as-a-service, agile DevOps as law, the normalization of
-                    continuously integrated and delivered apps and network businesses, pervasive broadband, the rise of JavaScript and node.js, and the breakout of data science and machine learning. Even so, I've left out the half of it.</p>
+                    <p>Within a few years, my firm shifted from financial to
+                    industrial clients to capture the epic rise of networked
+                    computing. It started with <span class="circlenum">①</span>
+                    networked PCs, client/server apps, Unix workstations and
+                    servers, Windows, distributed computing, RISC CPUs, clustered
+                    HPTC, “open standards,” COTS replacing bespoke, data warehousing
+                    and VLDB. I tracked right into <span class="circlenum">②</span>
+                    the internet, Java, the world-wide web, e-business, x86 remade,
+                    and the birth of open source. Then <span class=
+                    "circlenum">③</span> scale-out computing, Big Iron Unix, grid,
+                    SOA, web services, and the start of programmable “infrastructure
+                    as software.” Then <span class="circlenum">④</span> everything
+                    web, agile, virtualization, dynamic languages, modular servers,
+                    a data center and power/energy revolution, cloud, deep
+                    computing, “big data” and analytics, rich internet apps,
+                    widespread data integration, and the end of IT as a box
+                    business. I’ve eagerly tracked right into <span class=
+                    "circlenum">⑤</span> mobile ascendent, everything-as-a-service,
+                    agile DevOps as law, the normalization of continuously
+                    integrated and delivered apps and network businesses, pervasive
+                    broadband, the rise of JavaScript and node.js, and the breakout
+                    of data science and machine learning. Even so, I’ve left out the
+                    half of it, and remain eager for <span class=
+                    "circlenum">⑥</span> what comes next.</p>
 
-                    <p>Whatever happened in the networked computing revolution, I was there on the front lines, as or before it went mainstream. Served as analyst and advisor at the highest levels possible. Consulted and retained by many of the world’s largest IT developers, investors, and consumers. Called upon by business executives, corporate teams, government agencies, distinguished engineers and research fellows alike. I traveled the world, keynoted events, guided major company and development initiatives, was widely quoted by the tech and business press, sparked mergers and acquisitions, helped answer questions in times of chaos and transition, and served as expert in epic legal and procurement disputes.</p>
+                    <p>Whatever happened in the networked computing revolution, I
+                    was there on the front lines, as or before it went mainstream.
+                    Served as analyst and advisor at the highest levels possible.
+                    Consulted and retained by many of the world’s largest IT
+                    developers, investors, and consumers. Called upon by business
+                    executives, corporate teams, government agencies, distinguished
+                    engineers and research fellows alike. I traveled the world,
+                    keynoted events, guided major company and development
+                    initiatives, was widely quoted by the tech and business press,
+                    sparked mergers and acquisitions, helped answer questions in
+                    times of chaos and transition, and served as expert in epic
+                    legal and procurement disputes.</p>
                 </div>
 
-                <p><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#three">End of the Era</button></p>
+                <p><button type="button" class="btn btn-info" data-toggle="collapse"
+                    data-target="#three">End of the Era</button></p>
 
                 <div id="three" class="collapse">
-                    <p>Phenomenal as my advisory career was, I still wanted to be <i>*more*</i> involved. Being an analyst and consultant brings you into exciting projects, efforts, and situations—often at the highest levels, and in their pivotal moments. But however key your insights and guidance, however much you get to structure the plan, choose the tools, or figure out how to rescue a bad situation, there's limited opportunity for “skin in the game.” Engagements are transitory. You help a team choose or correct its path, but they’re the ones that get to “run the play.”</p>
+                    <p>Phenomenal as my advisory career was, I still wanted to be
+                    <i>*more*</i> involved. Being an analyst and consultant brings
+                    you into exciting projects, efforts, and situations—often at the
+                    highest levels, and in their pivotal moments. But however key
+                    your insights and guidance, however much you get to structure
+                    the plan, choose the tools, or figure out how to rescue a bad
+                    situation, there’s limited opportunity for “skin in the game.”
+                    Engagements are transitory. You help a team choose or correct
+                    its path, but they’re the ones that get to “run the play.”</p>
 
-                    <p>By 2010, I had “done it all.” I could continue acing that course for another thirty-something years, but as an analyst and consultant, there’s nothing left to prove. No more mountains to climb. What’s the fun in doing the same-ol’, same-ol’? Time for a new horizon.</p>
+                    <p>By 2010, I had “done it all.” I could continue acing that
+                    course for another thirty-something years, but as an analyst and
+                    consultant, there’s nothing left to prove. No more mountains to
+                    climb. What’s the fun in doing the same-ol’, same-ol’? Time for
+                    a new horizon.</p>
                 </div>
 
-                <p><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#four">App Stack, DevOps, and Beyond</button></p>
+                <p><button type="button" class="btn btn-info" data-toggle="collapse"
+                    data-target="#four">App Stack, DevOps, and Beyond</button></p>
 
-                <p id="four" class="collapse">In 2011, I fundamentally refocused on building apps and operating services. Had actually never stopped building things, having worked on significant internal IT projects and open source contributions all along. But hands-on became my primary responsibility. Python, JavaScript, repos, cloud instances, and DevOps became my workaday companions. Stack Overflow and code deep-dives became my constant reading. Still work with SVPs and CTOs, but my clients have greatly diversified into everyday developers, operators, app owners, domain specialists, and students. I've rekindled my enthusiasm for mentoring, especially through <a href="https://www.codementor.io/jonathaneunice" target="codementor">codementor.io</a>.</p>
+                <div id="four" class="collapse">
+                    <p>In 2011, I fundamentally refocused on building apps and
+                    operating services. Had actually never stopped building
+                    things, having worked on significant internal IT projects
+                    and open source contributions all along. But hands-on became
+                    my primary responsibility. Python, JavaScript, repos, cloud
+                    instances, and DevOps became my workaday companions. Stack
+                    Overflow and code deep-dives became my constant reading.
+                    Still work with SVPs and CTOs, but my clients have greatly
+                    diversified into everyday developers, operators, app owners,
+                    domain specialists, and students. I’ve rekindled my
+                    enthusiasm for mentoring, especially through <a href=
+                    "https://www.codementor.io/jonathaneunice" target=
+                    "codementor">codementor.io</a>.</p>
+                </div>
             </div>
         </div>
 
@@ -177,23 +304,44 @@
                         <td>Python</td>
 
                         <td>Contributor to Python core (CPython).<br>
-                        Numerous published modules. E.g. <a href="https://pypi.python.org/pypi/intspan">intspan</a>, <a href="https://pypi.python.org/pypi/options">options</a>, and <a href="https://pypi.python.org/pypi/say">say</a>.<br>
-                        Expert in language, including web, DBMS, middleware, introspection, meta-programming, collections, text processing, and data science toolkits.<br>
-                        Great fan of Flask, Pandas, Jupyter Notebook (and Lab), lxml, and so many other modules.</td>
+                        Numerous published modules. E.g.
+                        <a href="https://pypi.python.org/pypi/intspan">intspan</a>,
+                        <a href="https://pypi.python.org/pypi/options">options</a>, and
+                        <a href="https://pypi.python.org/pypi/say">say</a>.<br>
+                        Expert in language, including web, DBMS, middleware, introspection,
+                        meta-programming, collections, text processing, and data science toolkits.<br>
+                        Great fan of Flask, Pandas, Jupyter Notebook (and Lab),
+                        lxml, and so many other modules.</td>
                     </tr>
 
                     <tr>
                         <td>JavaScript</td>
 
-                        <td>Expert in language. Avid user of ES6/ES2015 forward. Strong express, underscore.js, gulp, babel, chai, mocha, node.js and other supporting skills.</td>
+                        <td>Expert in language. Avid user of ES6/ES2015 forward.
+                        Strong express, underscore.js, gulp, babel, chai, mocha, node.js
+                        and other supporting skills.</td>
                     </tr>
 
                     <tr>
                         <td>data</td>
-
-                        <td>IT <u>is</u> Data Processing. Strong in almost all aspects of how it's stored, moved, accessed, structured, secured, and processed. Includes relational databases (e.g. PostgreSQL, MySQL, SQLite) and non-relational/NoSQL databases (e.g, MongoDB), key-value stores (e.g. REDIS, DynamoDB), object databases, and their many hybrids and distributed variants.<br>
+                        <td>IT <u>is</u> Data Processing. Strong in almost all
+                        aspects of how it’s stored, moved, accessed, structured,
+                        secured, and processed. Includes relational databases
+                        (e.g. PostgreSQL, MySQL, SQLite) and
+                        non-relational/NoSQL databases (e.g, MongoDB), key-value
+                        stores (e.g. REDIS, DynamoDB), object databases, and
+                        their many hybrids and distributed variants.
+                        Have also spent more time with the architects and users
+                        of the world's
+                        &ldquo;enterprise&rdquo; data stores
+                        (e.g. DB2, IMS, Teradata, NonStop SQL, Oracle, SQL Server) than
+                        than 99.99% of people you&rsquo;ll meet in the
+                        open/cloud space.
                         <br>
-                        Whether it's data in memory, in flight, at rest, slumbering in archival storage, serialized or marshaled, tightly schema’d or entirely unstructured...I got it.</td>
+                        <br>
+                        Whether it’s data in memory, in flight, at rest,
+                        slumbering in archival storage, serialized or marshaled,
+                        tightly schema’d or entirely unstructured…I got it.</td>
                     </tr>
                 </table>
             </div>
