@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>f-strings</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+		<link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="https://revealjs.com/lib/css/zenburn.css">
+        <style>
+            .reveal pre {
+                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+                padding: 10px;
+                width: 100%;
+
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1 style="text-transform: none">The Unbridled Joy<br>of f-strings</h1>
+					<p>
+						<a href="https://twitter.com/jeunice">@jeunice</a><br>
+                        <a href="https://jonathaneunice.github.io">jonathaneunice.github.io</a><br>
+                        <a href="mailto:jonathan.eunice@gmail.com">jonathan.eunice@gmail.com</a><br></p>
+					</p>
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=revealjscom" id="_carbonads_js"></script>
+				</section>
+
+				<section>
+                    <h2>String Formatting</h2>
+                    <p class="fragment">Combining</p>
+                    <p class="fragment">existing strings</p>
+                    <p class="fragment">and non-string values</p>
+                    <p class="fragment">(which we stringify and format on the fly)</p>
+                    <p class="fragment">into longer desired strings,</p>
+                    <p class="fragment">often for output.</p>
+				</section>
+
+
+
+				<section>
+					<h2>Python-That-Was</h2>
+					<pre class="fragment" style="font-size: 0.6em"><code class="python hljs" data-trim contenteditable>
+item = 'oranges'
+num = 3
+
+print('there are', num, item, 'to eat')
+print('there are ' + str(num) + ' ' + item + ' to eat')
+print('there are %d %s to eat' % (num, item))
+print('there are {0} {1} to eat'.format(num, item)) # >= py26
+					</code></pre>
+                    <div class="fragment">
+
+					<p>Each outputs:</p>
+					<pre><code class="text hljs" data-trim contenteditable>
+there are 3 oranges to eat
+					</code></pre>
+                                        </div>
+
+				</section>
+
+                <section>
+					<h2>In for a Penny...</h2>
+					<pre class="fragment" style="font-size: .5em"><code class="python hljs" data-trim contenteditable>
+print(' '.join(['there are', str(num), item, 'to eat']))
+
+print('there are %(num)d %(item)s to eat' % {'num': num, 'item': item})
+print('there are %(num)d %(item)s to eat' % dict(num=num, item=item))
+print('there are %(num)d %(item)s to eat' % vars())
+
+# namedtuples work positionally, but not for named formats
+					</code></pre>
+                <p class="fragment">Not shown: <code>%</code> template variables have <code>printf</code>-like format specifiers</p>
+                </section>
+
+                <section>
+					<h2>In for a Pound...</h2>
+					<pre class="fragment"><code class="python hljs" data-trim contenteditable>
+print('there are {0} {1} to eat'.format(num, item))   # >= py26
+print('there are {} {} to eat'.format(num, item))     # >= py27
+print('there are {} {} to eat'.format(*[num, item]))
+print('there are {num} {item} to eat'.format(num=num, item=item))
+print('there are {} {item} to eat'.format(num, item=item))
+print('there are {num} {item} to eat'.format(**vars()))
+print('there are {num} {item} to eat'.format_map(vars())) # >= py32
+					</code></pre>
+                <p class="fragment">Not shown: <code>{}</code> template variables have richer,<br>
+                   post-<code>printf</code> format and type conversion specifiers
+                </p>
+                </section>
+
+                <section>
+					<h2>But Wait! There's More!</h2>
+					<pre class="fragment"><code class="python hljs" data-trim contenteditable>
+from string import Template # >= py24
+
+s = Template('there are $num $item to eat')
+print(s.substitute(num=num, item=item))
+					</code></pre>
+                <div class="fragment">
+                <p>And...</p>
+					<pre><code class="python hljs" data-trim contenteditable>
+message = 'there are NUM ITEM to eat'
+print(message.replace('NUM', str(num)).replace('ITEM', item))
+Plus dozens of other template libraries
+					</code></pre>
+                </div>
+                <p class="fragment">Plus dozens of <a href="https://wiki.python.org/moin/Templating">other
+                template libraries</a></p>
+                </section>
+
+                <section>
+					<h2>What's The Problem?</h2>
+					<pre style="font-size: .40em"><code class="python hljs" data-trim contenteditable>
+print('there are', num, item, 'to eat')
+
+print('there are ' + str(num) + ' ' + item + ' to eat')
+print(' '.join(['there are', str(num), item, 'to eat']))
+
+print('there are %d %s to eat' % (num, item))
+print('there are %(num)d %(item)s to eat' % {'num': num, 'item': item})
+print('there are %(num)d %(item)s to eat' % dict(num=num, item=item))
+print('there are %(num)d %(item)s to eat' % vars())
+
+print('there are {0} {1} to eat'.format(num, item))    # >= py26
+print('there are {} {} to eat'.format(num, item))      # >= py27
+print('there are {} {} to eat'.format(*[num, item]))
+print('there are {num} {item} to eat'.format(num=num, item=item))
+print('there are {} {item} to eat'.format(num, item=item))
+print('there are {num} {item} to eat'.format(**vars()))
+print('there are {num} {item} to eat'.format_map(vars())) # >= py32
+
+print(Template('there are $num $item to eat').substitute(num=num, item=item)) # >= py24
+print('there are NUM ITEM to eat'.replace('NUM', str(num)).replace('ITEM', item))
+					</code></pre>
+                </section>
+
+				<section>
+					<h2>The Zen of Python</h2>
+                    <p class="fragment">There should be one—and preferably only
+                       one—obvious way to do it.</p>
+                    <p class="fragment">Beautiful is better than ugly.</p>
+                    <p class="fragment">Simple is better than complex.</p>
+                    <p class="fragment">Flat is better than nested.</p>
+                    <p class="fragment">Readability counts.</p>
+				</section>
+
+				<section>
+					<h2>Python String Formatting Isn't Pythonic</h2>
+                    <p class="fragment">Fails Python's style guidelines and moral code</p>
+                    <p class="fragment">Fails utterly and miserably</p>
+                    <p class="fragment">Ugly, indirect, syntax-laden,
+                        repetitive, profuse...</p>
+                    <p class="fragment">The best design thinking of 1956&ndash;1966<br>
+                       <span class="fragment">&times;
+                       Python's historical cruft</span></p>
+				</section>
+
+<section>
+					<h2>It's a Mess!</h2>
+					<pre style="font-size: .40em"><code class="python hljs" data-trim contenteditable>
+print('there are', num, item, 'to eat')
+
+print('there are ' + str(num) + ' ' + item + ' to eat')
+print(' '.join(['there are', str(num), item, 'to eat']))
+
+print('there are %d %s to eat' % (num, item))
+print('there are %(num)d %(item)s to eat' % {'num': num, 'item': item})
+print('there are %(num)d %(item)s to eat' % dict(num=num, item=item))
+print('there are %(num)d %(item)s to eat' % vars())
+
+print('there are {0} {1} to eat'.format(num, item))    # >= py26
+print('there are {} {} to eat'.format(num, item))      # >= py27
+print('there are {} {} to eat'.format(*[num, item]))
+print('there are {num} {item} to eat'.format(num=num, item=item))
+print('there are {} {item} to eat'.format(num, item=item))
+print('there are {num} {item} to eat'.format(**vars()))
+print('there are {num} {item} to eat'.format_map(vars())) # >= py32
+
+print(Template('there are $num $item to eat').substitute(num=num, item=item)) # >= py24
+print('there are NUM ITEM to eat'.replace('NUM', str(num)).replace('ITEM', item))
+					</code></pre>
+                </section>
+
+                <section>
+
+					<h2>Or it was...</h2>
+                    <p class="fragment">Python 3.6 f-strings to the rescue!</p>
+					<pre class="fragment" style="font-size: 0.9em; text-align: center"><code class="python hljs" data-trim contenteditable>
+print(f'there are {num} {item} to eat')
+					</code></pre>
+                    <p class="fragment">Direct in-context interpolation</p>
+                    <p class="fragment">Of names or expressions</p>
+                    <p class="fragment">Same format specifiers as <code>str.format()</code></p>
+
+                </section>
+
+                <section>
+
+					<h2>This is a <span style="text-decoration: double underline">BIG DEAL</span></h2>
+                    <pre class="fragment" style="font-size: 0.9em; text-align: center"><code class="python hljs" data-trim contenteditable>
+print(f'there are {num} {item} to eat')
+					</code></pre>
+                    <p class="fragment">Python finally has Pythonic string formatting!</p>
+                    <p class="fragment">No extra methods, operators, or syntax</p>
+                    <p class="fragment">Catches up with Perl
+                        <small style="vertical-align: baseline">(1987)</small>,
+                        PHP <small style="vertical-align: baseline">(1995)</small>,
+                        JavaScript <small style="vertical-align: baseline">(2015)</small>
+                        <span class="fragment"><br>(but much better format specifiers)</span>
+                    </p>
+                    <p class="fragment">Clean, concise, direct, efficient, Pythonic</p>
+                    <p class="fragment">Much <b>Yay!!!</b></p>
+                </section>
+
+				<section>
+					<h2>Imperfections</h2>
+
+                    <p class="fragment">Not all software tools savvy to f-strings yet</p>
+                    <ul class="fragment">
+                        <li>syntax highlighers</li>
+                        <li>linters</li>
+                        <li>code cleanup tools (e.g. <code>yapf</code>)</li>
+                    </ul>
+                    <p class="fragment">No perfect way to support <= py36</p>
+                    <pre class="fragment" style="font-size: .8em"><code class="python hljs" data-trim contenteditable>
+from say import f
+
+print(f('π = {pi:0.4f}, e = {e:0.4f}')
+					</code></pre>
+                </section>
+
+                <section>
+					<h2>Conclusion</h2>
+                    <p class="fragment">f-strings = natural go-to idiom for string formatting</p>
+                    <pre class="fragment" style="font-size: 0.9em; text-align: center"><code class="python hljs" data-trim contenteditable>
+print(f'there are {num} {item} to eat')
+					</code></pre>
+                    <p class="fragment">Joyful flow &amp; conciseness make string formatting fun</p>
+                    <p class="fragment">Best Python advance in some time
+                       <span class="fragment"><br>on par with
+                        <code>with</code> & comprehensions</span></p>
+                    <p class="fragment">A delightful, motivating update</p>
+                    <p class="fragment"><span style="text-decoration: double underline">Run</span>,
+                       don't walk, to f-strings!</p>
+
+                </section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="https://revealjs.com/lib/js/head.min.js"></script>
+		<script src="https://revealjs.com/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'https://revealjs.com/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'https://revealjs.com/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'https://revealjs.com/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'https://revealjs.com/plugin/search/search.js', async: true },
+					{ src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+
+
+	</body>
+</html>
