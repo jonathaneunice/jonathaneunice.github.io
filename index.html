@@ -7,62 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Jonathan Eunice</title>
-    <!&mdash; Bootstrap CSS and theme &mdash;>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" type="text/css"><!&mdash; other styles and fonts &mdash;>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        body {
-            font-family: Lato, sans-serif;
-        }
-        h1 {
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 170%;
-        }
-        p.badges {
-            max-width: 6in;
-            margin-bottom: 0.4in;
-        }
-        p.instructions {
-            color: gray;
-        }
-        blockquote, ul {
-            font-size: 150%;
-        }
-        .circlenum {
-            font-size: 110%;
-            font-weight: 900;
-            margin-left: 0.4em;
-            margin-right: 0.4em;
-            vertical-align: -2px;
-        }
-        .jumbotron ul p {
-            margin-bottom: 3px;
-        }
-        button {
-            margin-top: 12px;
-        }
-        .jumbotron {
-            padding-top: 24px;
-            padding-bottom: 24px;
-        }
-        table {
-            font-size: 140%;
-            border-collapse: collapse;
-        }
-        tr {
-            border: thin solid black;
-        }
-        td {
-            padding: 12px 10px;
-            max-width: 6.25in;
-        }
-
-        .T19 { font-style:italic; }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -82,67 +30,12 @@
         <div class="jumbotron">
 
             <h2>Why DevOps?</h2>
-            <p><img src="devops.png" style="width: 3in; float: right;">DevOps is a force-multiplier. It provides the historic opportunity to connect all phases
+            <p><img src="devops.png" style="width: 3in; float: right; margin-left: 10px;">DevOps is a force-multiplier. It provides the historic opportunity to connect all phases
                 of IT, from the imagination of designers and architects through the meticulous monitoring
                 and care of production services&mdash;in other words, the power and
-                levers to &ldquo;improve the way things are done.&rdquo;</p>
-            <p>It also includes all the frustration of &ldquo;mechanic work&rdquo; and quite a lot of
-                &ldquo;herding cats&rdquo;.
-                Invariably-recalcitrant people, processes, cultural expectations, and tools have be brought 
-                together and made to work together.
-                There are often silos to be worked around, 
-                ugly prior band-aids to be improved, and constant time pressure.
-                You get blamed for everything that doesn&rsquo;t work, no matter who picked it, wrote it,
-                owns it, or currently runs it&mdash;no matter how long it&rsquo;s been a problem.
+                levers to &ldquo;improve the way things are done.&rdquo;
+                <a href="why-devops.html" target="_blank">»&nbsp;continue&nbsp;reading&nbsp;»</a>
             </p>
-            <h2>&ldquo;Other than that, Mrs. Lincoln, how was the play?&rdquo;</h2>
-            <p>
-                I admire, take solace from the travails of, and learn from other difficult fields such as
-                fire-fighting, motion picture production, and America&rsquo;s get-to-the-moon program.
-                When there are dozens or hundreds of problems ahead of you every day, nothing suffices but
-                getting into the fight. Fight high and low, strategic and tactical,
-                left and right. Focus on *this* problem right in front of you the next hour, then when that&rsquo;s
-                tamped down, move on to the next dozen things that needed fixed two weeks, months, or years ago.
-                And keep enough in the tank to fight the long-term, systemic problems that no one else has imagined
-                can yet be fixed.
-            </p>
-            <p>
-                Frustrations notwithstanding, DevOps is a wonderful field that epitomizes the power of
-                integration, networked resources, and a positive opportunity to make things right.
-                Even the largest knots can be untied, if you're systematic and relentless. That constant
-                challenge is matched by the constant opportunity to fix, to improve, to create leverage.
-            </p>
-            <p>&ldquo;Once more unto the breach, dear friends! Once more!&rdquo;</p>
-
-            <h2>Isn&rsquo;t DevOps Just Glorified Systems Administration?</h2>
-
-            <p>Uh&hellip;no. No, no, <b>no</b>! If that's how you&rsquo;re doing DevOps,
-               you&rsquo;re doing it very, very, <i>OMG! so very wrong.</i></p>
-            <p>The whole point is getting out of the reactive, repetitive, labor-intensive work of IT-that-was. To convert
-                skills into processes, to automate gratuitous labor out of the equation, and to bridge
-                the former chasm between software and systems, between dev and ops. The tools we use&mdash;the containers
-                and clouds, the VMs and CI/CD pipelines, the monitoring and the orchestration engines&mdash;they&rsquo;re
-                just means to this integrated end.
-                If you must make it about a thing, that thing
-                should be the evolving of infrastructure <i>and</i> processes
-                into software,
-                so that code, instrumentation, monitoring, and alerting
-                can stand in for what was once repetitive human labor and constant
-                attention.
-            </p>
-            <p>
-                There <i>is</i> a lot of mechanic work involved. There are also a lot of incidents to field
-                and debug, making you first-responder and trauma team through rehab specialist.
-                But you&rsquo;d better be a developer at heart, to build better structures. A bit of a
-                data scientist, to understand the indicators and
-                trends. And an architect, to design features and processes that
-                work at scale. And at least a semi-advanced cat wrangler, to
-                get all the disparate people and groups aligned behind the way
-                things should be done. And, and, and&hellip;
-            </p>
-            <p>It&rsquo;s holistic, challenging, and requires polymaths. Anyone who feels right and justified reducing
-                DevOps to fancified, shmancified sysadmin work&mdash;that&rsquo;s a
-                person who&rsquo;s only seen it done poorly.</p>
         </div>
     </div>
 
