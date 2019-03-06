@@ -15,6 +15,10 @@ h2 {
 h2.header {
   margin-top: 30px;
 }
+a.neuter,
+a.neuter:hover {
+  text-decoration: none;
+}
 p.badges {
   max-width: 6in;
   margin-bottom: 0.4in;
